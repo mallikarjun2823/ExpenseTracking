@@ -7,3 +7,11 @@ class Session(models.Model):
     def __str__(self):
         return f"Session {self.pid} - {self.req_type}"
 # Create your models here.
+class Tracker(models.Model):
+    id = models.AutoField(primary_key=True)
+    amount = models.IntegerField()
+    transactiontype = models.CharField(max_length=2)
+
+    def __str__(self):
+        return f"Amount of {self.amount} {self.transactiontype}"
+    

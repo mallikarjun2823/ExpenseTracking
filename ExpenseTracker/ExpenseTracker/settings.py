@@ -51,11 +51,13 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'ExpenseTracker.urls'
+import os
+from pathlib import Path
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -76,11 +78,11 @@ WSGI_APPLICATION = 'ExpenseTracker.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'tracker_dev',       # Replace with your actual DB name
-        'USER': 'root',                     # Or your MariaDB username
-        'PASSWORD': 'root',        # Replace with actual password
-        'HOST': '127.0.0.1',                # Since it's running locally
-        'PORT': '3306',                     # Default port for MariaDB/MySQL
+        'NAME': 'tracker_dev',       
+        'USER': 'root',                     
+        'PASSWORD': 'root',        
+        'HOST': '127.0.0.1',                
+        'PORT': '3306',                     
         'OPTIONS': {
             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
         },

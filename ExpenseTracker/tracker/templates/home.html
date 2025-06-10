@@ -1,0 +1,21 @@
+<!-- your_app/templates/home.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Transaction Form</title>
+</head>
+<body>
+    <form method="POST" action="home/">
+        {% csrf_token %}
+        Debit: <input name="Type" type="radio" value="Debit"> 
+        <br>
+        Credit: <input name="Type" type="radio" value="Credit"> 
+        <br>
+        Enter amount to Debit or Credit:
+        <input type="number" name="Amount" required>
+        <br>
+        <button type="submit">Add Transaction</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All Transactions</title>
+</head>
+<body>
+    <h1>Transaction Summary</h1>
+    
+    {% if transactions %}
+        <table border="1" cellpadding="10">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Amount</th>
+                    <th>Type</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for txn in transactions %}
+                    <tr>
+                        <td>{{ txn.id }}</td>
+                        <td>{{ txn.amount }}</td>
+                        <td>{{ txn.transactiontype }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No transactions recorded yet.</p>
+    {% endif %}
+</body>
+</html>
